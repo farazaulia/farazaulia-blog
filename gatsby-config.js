@@ -1,4 +1,4 @@
-const mdxFeed = require('gatsby-mdx/feed')
+const mdxFeed = require('gatsby-plugin-mdx/feed')
 
 const configuration = {
   // the name of your website
@@ -9,7 +9,7 @@ const configuration = {
   // It should complete the sentence: Written by Faraz Muhammad Aulia ...
   shortBio: '',
   // a longer bio showing on the landing page of the blog
-  bio: `Web programmer. Tech enthusiast.`,
+  bio: `Mobile & Web App Developer.`,
   author: 'Faraz Muhammad Aulia',
   githubUrl: 'https://github.com/farazaulia/farazaulia-blog.git',
   // replace this by the url where your website will be published
@@ -17,10 +17,10 @@ const configuration = {
   social: {
     // leave the social media you do not want to appear as empty strings
     twitter: 'farazaulia',
-    medium: '@farazaulia',
+    medium: '',
     facebook: '',
-    github: '',
-    linkedin: '',
+    github: 'farazaulia',
+    linkedin: 'farazaulia',
     instagram: '',
   },
 }
@@ -30,7 +30,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     {
-      resolve: 'gatsby-mdx',
+      resolve: 'gatsby-plugin-mdx',
       options: {
         extensions: ['.md', '.mdx'],
         gatsbyRemarkPlugins: [

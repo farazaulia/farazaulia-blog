@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 
 import SEO from '../components/seo'
 import Pills from '../components/pills'
@@ -45,26 +45,16 @@ export default function PageTemplate({ data: { mdx, site }, pageContext }) {
             <Pills items={mdx.frontmatter.categories} />
           </header>
 
-          <MDXRenderer scope={{ Embed }}>{mdx.code.body}</MDXRenderer>
+          <MDXRenderer scope={{ Embed }}>{mdx.body}</MDXRenderer>
         </article>
         <footer className="container small">
           <small>
             <a
               target="_blank"
               rel="nofollow noopener noreferrer"
-              href={`https://twitter.com/search?q=${publicUrl}`}
+              href={`https://twitter.com/intent/tweet?text=I%20just%20read%20${publicUrl}`}
             >
-              Discuss on Twitter
-            </a>{' '}
-            &middot;{' '}
-            <a
-              target="_blank"
-              rel="nofollow noopener noreferrer"
-              href={`${site.siteMetadata.githubUrl}/edit/master/content${
-                mdx.fields.slug
-              }index.md`}
-            >
-              Edit this post on GitHub
+              Share on Twitter
             </a>
           </small>
           <hr
@@ -123,9 +113,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         canonical_link
       }
-      code {
-        body
-      }
+      body
     }
   }
 `

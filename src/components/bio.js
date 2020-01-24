@@ -6,7 +6,7 @@ function Bio() {
   const { site, avatar } = useStaticQuery(
     graphql`
       query BioQuery {
-        avatar: file(absolutePath: { regex: "/avatar.png/" }) {
+        avatar: file(absolutePath: { regex: "/avatar.jpeg/" }) {
           childImageSharp {
             fixed(width: 50, height: 50, quality: 80) {
               base64
@@ -57,7 +57,7 @@ function Bio() {
         {shortBio ? ` ${shortBio}` : ''}.{` `}
         {social.twitter ? (
           <a href={`https://twitter.com/${social.twitter}`}>
-            You should follow them on Twitter.
+            You should follow me on Twitter.
           </a>
         ) : null}
       </p>

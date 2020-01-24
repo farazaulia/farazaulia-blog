@@ -14,7 +14,7 @@ const BlogIndexPage = ({ data: { allMdx } }) => (
   <Layout>
     <SEO />
     <Section centered>
-      <MainBio />
+      <a href="https://farazaulia.me">← Home</a>
     </Section>
 
     {allMdx.nodes.map(post => (
